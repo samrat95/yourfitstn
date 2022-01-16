@@ -1,0 +1,24 @@
+<p>
+    <a routerLink="/admin/gyminfo/new" class="btn btn-primary">New Gym</a>
+</p>
+<p>
+    <input #query (keyup)="filter(query.value)" type="text" class="form-control" placeholder="Search....">
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Starting Membership Price/month</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let g of filteredGymInfo">
+            <td>{{ g.title }}</td>
+            <td>{{ g.price }}</td>
+            <td>
+                <a [routerLink]="['/admin/gyminfo/', g.key]">Edit</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

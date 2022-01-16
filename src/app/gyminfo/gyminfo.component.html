@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-3">
+        <app-gym-filter [category]="category"></app-gym-filter>
+    </div>
+    <div class="col">
+        <div class="row">
+            <ng-container *ngFor="let g of filteredGyms; let i = index">
+                <div class="col">
+                    <app-gyminfo-card [gym]="g"></app-gyminfo-card>
+                </div>
+                <div *ngIf="(i + 1) % 2 === 0" class="w-100"></div>
+            </ng-container>
+        </div>
+    </div>
+</div>
